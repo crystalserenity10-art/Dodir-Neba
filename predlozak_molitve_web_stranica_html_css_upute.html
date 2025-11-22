@@ -1,0 +1,242 @@
+<!--
+Predložak: Web stranica za molitve (HTML + CSS + jednostavan JS)
+Upute: kopiraj sadržaj u datoteku index.html. Zamijeni PLACEHOLDER vrijednosti (kanal, video ID-eve, tekstove, slike).
+Možeš objaviti na GitHub Pages, Netlify ili drugom hostu.
+-->
+
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dodir Neba — Molitve i blagoslov</title>
+  <meta name="description" content="Duhovne molitve za mir, iscjeljenje, obitelj i financije. Molitve s YouTube kanala—slušaj, čitaj i podijeli.">
+  <!-- Open Graph (social) -->
+  <meta property="og:title" content="Dodir Neba — Molitve i blagoslov">
+  <meta property="og:description" content="Duhovne molitve za mir, iscjeljenje, obitelj i financije. Molitve s YouTube kanala—slušaj, čitaj i podijeli.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tvojastranica.example/">
+  <meta property="og:image" content="https://tvojastranica.example/og-image.jpg">
+
+  <!-- Favikon -->
+  <link rel="icon" href="/favicon.ico">
+
+  <style>
+    :root{--accent:#6b46c1;--muted:#6b7280;--bg:#fbfbfb;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#111}
+    header{background:linear-gradient(90deg, rgba(107,70,193,0.08), rgba(99,102,241,0.04)); padding:18px}
+    .container{max-width:1100px; margin:0 auto; padding:18px}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{width:52px; height:52px; border-radius:10px; background:var(--accent); color:white; display:grid; place-items:center; font-weight:700}
+    nav{margin-left:auto}
+    nav a{margin-left:12px; text-decoration:none; color:var(--muted)}
+
+    .hero{display:grid; grid-template-columns:1fr; gap:18px; align-items:center; padding:28px 0}
+    .hero .title{font-size:28px; line-height:1.05; margin:0}
+    .hero .subtitle{color:var(--muted); margin-top:6px}
+    .cta{margin-top:12px}
+    .btn{display:inline-block; background:var(--accent); color:white; padding:10px 16px; border-radius:10px; text-decoration:none}
+
+    .grid{display:grid; grid-template-columns: 1fr 380px; gap:18px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card); border-radius:12px; box-shadow:0 6px 18px rgba(15,23,42,0.06); padding:14px}
+
+    /* Responsive YouTube embed */
+    .video-wrap{position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px}
+    .video-wrap iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
+
+    .playlist{display:grid; gap:10px}
+    .pl-item{display:flex; gap:10px; align-items:center; cursor:pointer}
+    .pl-item img{width:110px; height:62px; object-fit:cover; border-radius:6px}
+    .pl-item .meta{font-size:14px}
+    .pl-item .meta .title{font-weight:600}
+    .pl-item:hover{opacity:0.95}
+
+    .accordion{margin-top:10px}
+    .acc-toggle{width:100%; text-align:left; background:transparent; border:0; font-weight:600; padding:10px 0; cursor:pointer}
+    .acc-content{max-height:0; overflow:hidden; transition:all .28s ease}
+    .acc-content.open{max-height:600px; padding-top:8px}
+
+    footer{margin-top:28px; padding:20px 0; color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">DN</div>
+        <div>
+          <div style="font-weight:700">Dodir Neba</div>
+          <div style="font-size:13px;color:var(--muted)">Molitve | Isa | Marija | Anđeli</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#videos">video</a>
+        <a href="#molitve">molitve</a>
+        <a href="#kontakt">kontakt</a>
+        <a class="btn" href="https://www.youtube.com/channel/PLACEHOLDER_CHANNEL_ID" target="_blank" rel="noopener">Prati nas na YouTube</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div style="display:flex;gap:18px;align-items:center;justify-content:space-between">
+        <div>
+          <h1 class="title">Molitve koje donose mir i iscjeljenje</h1>
+          <p class="subtitle">Slušaj naše vodene molitve, poveži se s YouTube kanalom i prenesi blagoslov dalje.</p>
+          <div class="cta">
+            <a class="btn" href="https://www.youtube.com/channel/PLACEHOLDER_CHANNEL_ID" target="_blank" rel="noopener">Slušaj najnovije</a>
+          </div>
+        </div>
+        <div style="text-align:right;color:var(--muted)">
+          <div style="font-size:12px">Kontakt:</div>
+          <div style="font-weight:600">email@tvojastranica.example</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="grid">
+      <div>
+        <div class="card">
+          <!-- Glavni video (embed). Zamijeni VIDEO_ID_PLACEHOLDER sa stvarnim YouTube ID-em -->
+          <div class="video-wrap" id="mainVideo">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_PLACEHOLDER?rel=0&modestbranding=1" title="Glavni molitveni video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+
+          <h3 style="margin-top:12px">Opis videa</h3>
+          <p style="color:var(--muted)">Kratak tekst opisa videa. Ovdje staviš kratki uvod, poziv na praćenje i linkove.</p>
+
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <a class="btn" href="https://www.youtube.com/watch?v=VIDEO_ID_PLACEHOLDER" target="_blank" rel="noopener">Otvoriti u YouTube</a>
+            <a style="text-decoration:none;padding:10px;border-radius:10px;background:#eee;color:#111" href="#molitve">Pročitaj molitvu</a>
+          </div>
+
+          <h4 style="margin-top:18px">Ostali video zapisi</h4>
+          <div class="playlist" id="playlist">
+            <!-- Primjer stavke: zamijeni thumbnail i data-video-id -->
+            <div class="pl-item" data-video-id="VIDEO_ID_1">
+              <img src="https://img.youtube.com/vi/VIDEO_ID_1/hqdefault.jpg" alt="thumbnail">
+              <div class="meta">
+                <div class="title">Molitva za mir (15 min)</div>
+                <div style="color:var(--muted);font-size:13px">Kratki opis molitve</div>
+              </div>
+            </div>
+
+            <div class="pl-item" data-video-id="VIDEO_ID_2">
+              <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg" alt="thumbnail">
+              <div class="meta">
+                <div class="title">Molitva za iscjeljenje (30 min)</div>
+                <div style="color:var(--muted);font-size:13px">Kratki opis</div>
+              </div>
+            </div>
+
+            <div class="pl-item" data-video-id="VIDEO_ID_3">
+              <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg" alt="thumbnail">
+              <div class="meta">
+                <div class="title">Molitva za financije (20 min)</div>
+                <div style="color:var(--muted);font-size:13px">Kratki opis</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="molitve" class="card" style="margin-top:14px">
+          <h3>Tekstovi molitvi</h3>
+          <p style="color:var(--muted)">Klikni na naslov da otvoriš cijeli tekst.</p>
+
+          <div class="accordion">
+            <button class="acc-toggle">Molitva za mir</button>
+            <div class="acc-content">
+              <p>Ovo je prostor za cijeli tekst molitve za mir. Zalijepi ovdje svoj 15–30 min tekst za čitanje.</p>
+            </div>
+
+            <button class="acc-toggle">Molitva za iscjeljenje</button>
+            <div class="acc-content">
+              <p>Tekst molitve za iscjeljenje — duži ili kraći prema potrebi.</p>
+            </div>
+
+            <button class="acc-toggle">Molitva za financije</button>
+            <div class="acc-content">
+              <p>Tekst molitve za financijsko blagoslovljenje.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <aside>
+        <div class="card">
+          <h4>Prati nas</h4>
+          <p style="color:var(--muted)">Pretplati se na YouTube kako bi primio najnovije molitve.</p>
+          <a class="btn" href="https://www.youtube.com/channel/PLACEHOLDER_CHANNEL_ID" target="_blank" rel="noopener">Pretplati se</a>
+
+          <h4 style="margin-top:12px">Brzi linkovi</h4>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li><a href="#videos">Najnoviji video</a></li>
+            <li><a href="#molitve">Sve molitve</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+
+          <h4 style="margin-top:12px">Prijava na newsletter</h4>
+          <form action="#" onsubmit="alert('Zamijeni ovu formu sa pravim servisom (Mailchimp, ConvertKit...).')">
+            <input type="email" placeholder="tvoj@email.com" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;margin-bottom:8px">
+            <button class="btn" type="submit">Prijavi se</button>
+          </form>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4>Kontakt</h4>
+          <p style="color:var(--muted)">Email: <a href="mailto:email@tvojastranica.example">email@tvojastranica.example</a></p>
+          <p style="color:var(--muted)">Instagram / Facebook: @tvojprofil</p>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div style="color:var(--muted)">© Dodir Neba — Sva prava zadržana</div>
+        <div style="color:var(--muted)">Izradi: tvoj-ime · <a href="#">Uvjeti korištenja</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Jednostavan JS za prebacivanje glavnog videa kad klikneš stavku iz playlist-e
+    document.querySelectorAll('.pl-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.getAttribute('data-video-id');
+        if(!id) return;
+        const iframe = document.querySelector('#mainVideo iframe');
+        iframe.src = `https://www.youtube.com/embed/${id}?rel=0&modestbranding=1&autoplay=1`;
+        // skrol na video
+        iframe.scrollIntoView({behavior:'smooth', block:'center'});
+      })
+    })
+
+    // Accordion
+    document.querySelectorAll('.acc-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle('open');
+      })
+    })
+  </script>
+
+  <!-- UPUTE (kratko):
+    1) Zamijeni PLACEHOLDER_CHANNEL_ID sa ID-om svog YouTube kanala (dio URL-a poslije /channel/).
+    2) Za svaki video u playlisti zamijeni VIDEO_ID_1, VIDEO_ID_2... sa stvarnim YouTube ID-evima.
+       Thumbnaili će se automatski povući sa img.youtube.com/vi/VIDEO_ID/hqdefault.jpg
+    3) Promijeni meta tagove (title, description, og:image) za SEO.
+    4) Ako želiš automatski učitavati najnovije video zapise sa kanala, možeš kasnije dodati server-side skriptu
+       koja čita YouTube Data API ili RSS feed kanala (za to treba API ključ ili server).
+    5) Za objavu na GitHub Pages: kreiraj repo tvojeime.github.io i u njega stavi index.html (ovo je datoteka).
+    6) Ako želiš, mogu ti prilagoditi boje, fontove, dodati hrvatske prevode ili generirati SEO-friendly opise.
+  -->
+
+</body>
+</html>
